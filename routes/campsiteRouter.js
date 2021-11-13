@@ -5,12 +5,15 @@ const campsiteRouter = express.Router();
 
 campsiteRouter.route('/')
 .get((req, res, next) => {
+    //calling request method find
     Campsite.find()
+    //how to respond for that request find
     .then(campsites => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
         res.json(campsites);
     })
+    //catching the errors for request find
     .catch(err => next(err));
 })
 .post((req, res, next) => {

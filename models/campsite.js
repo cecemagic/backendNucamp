@@ -20,6 +20,7 @@ const commentSchema = new Schema({
         required: true
     }
 }, {
+    //optional argument for Schema.
     timestamps: true
 });
 
@@ -50,11 +51,12 @@ const campsiteSchema = new Schema({
         type: Boolean,
         default: false
     },
+    //this is a sub-document
     comments: [commentSchema]
 }, {
     timestamps: true
 });
-
+//exporting this Schema as a model to apply for data.
 const Campsite = mongoose.model('Campsite', campsiteSchema)
 
 module.exports = Campsite;
