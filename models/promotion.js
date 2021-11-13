@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 require('mongoose-currency').loadType(mongoose);
+//declare as mongoose data types
 const Currency = mongoose.Types.Currency;
 
 const promotionSchema = new Schema({

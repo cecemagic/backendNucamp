@@ -42,6 +42,7 @@ campsiteRouter.route('/')
 
 campsiteRouter.route('/:campsiteId')
 .get((req, res, next) => {
+    //params: what id are you looking for
     Campsite.findById(req.params.campsiteId)
     .then(campsite => {
         res.statusCode = 200;

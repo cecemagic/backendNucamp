@@ -17,11 +17,13 @@ const partnerSchema = new Schema({
     },
     featured: {
         type: Boolean,
+        default: false
     }
 }, {
     timestamps: true
 });
 
+//method create Model and bind it to Schema
 const Partner = mongoose.model('Partner', partnerSchema)
 
 module.exports = Partner;
